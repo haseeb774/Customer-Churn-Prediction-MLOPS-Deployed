@@ -1,0 +1,40 @@
+artifact_path: file:D:/ML projects/churn/mlruns/1/models/m-3d360d168c8140cebf337189194c29ea/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.10
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+is_signature_from_type_hint: false
+mlflow_version: 3.8.1
+model_id: m-3d360d168c8140cebf337189194c29ea
+model_size_bytes: 833813
+model_uuid: m-3d360d168c8140cebf337189194c29ea
+prompts: null
+run_id: c254b76bf06049eb80ee53675c4359b0
+signature:
+  inputs: '[{"type": "long", "name": "gender", "required": true}, {"type": "long",
+    "name": "SeniorCitizen", "required": true}, {"type": "string", "name": "Partner",
+    "required": true}, {"type": "string", "name": "Dependents", "required": true},
+    {"type": "long", "name": "tenure", "required": true}, {"type": "string", "name":
+    "PhoneService", "required": true}, {"type": "string", "name": "InternetService",
+    "required": true}, {"type": "string", "name": "OnlineSecurity", "required": true},
+    {"type": "string", "name": "OnlineBackup", "required": true}, {"type": "string",
+    "name": "DeviceProtection", "required": true}, {"type": "string", "name": "TechSupport",
+    "required": true}, {"type": "string", "name": "StreamingTV", "required": true},
+    {"type": "string", "name": "Contract", "required": true}, {"type": "string", "name":
+    "PaperlessBilling", "required": true}, {"type": "string", "name": "PaymentMethod",
+    "required": true}, {"type": "double", "name": "MonthlyCharges", "required": true},
+    {"type": "double", "name": "TotalCharges", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-01-27 19:32:52.370299'
