@@ -1,0 +1,4 @@
+[ 2026-02-11 22:07:03,172 ] 12 root - INFO - file is load and returned from data_ingest
+[ 2026-02-11 22:07:03,234 ] 46 root - INFO - data_transformation succeesfuly completw
+[ 2026-02-11 22:07:03,234 ] 24 root - INFO - model_training started
+[ 2026-02-11 22:07:03,288 ] 112 root - INFO - error occured in model_train

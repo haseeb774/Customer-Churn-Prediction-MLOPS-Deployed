@@ -12,5 +12,6 @@ xgboost
 imbalanced-learn
 mlflow
 streamlit
+lightgbm
 docker
 optuna
