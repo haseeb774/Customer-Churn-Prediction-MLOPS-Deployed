@@ -50,7 +50,7 @@ class Datatransform:
             df = pd.concat([df, pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(["PaymentMethod"]))], axis=1)
             df = df.dropna()
             logging.info("data_transformation succeesfuly completw")
-
+            df.to_csv("data/processed/processed_churn.csv")
             return df
             
 

@@ -33,6 +33,7 @@ class TrainModel:
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.2, random_state=42, stratify=y
             )
+            
 
             THRESHOLD = 0.25
             def objective(trial):
@@ -116,6 +117,11 @@ class TrainModel:
                     signature=signature,
                     input_example=X_test.iloc[:5] # Good for documentation
                 )
+
+                output_dir = "outputs"
+                model_file_path = os.path.join(output_dir, "model.pkl")
+                joblib.dump(xgb, model_file_path)
+                logging.info(f"Model successfully saved to {model_file_path}")
 
                 print(classification_report(y_test, y_pred, digits=3))
             logging.info("model_training + mlflow complete")    

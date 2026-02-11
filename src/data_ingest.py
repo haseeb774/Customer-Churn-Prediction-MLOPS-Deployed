@@ -10,6 +10,7 @@ class DataIngest:
         try:
             df = pd.read_csv(self.file_path)
             logging.info("file is load and returned from data_ingest")
+            df.to_csv("data/raw/churn.csv")
             return df
             
             

@@ -1,1 +1,27 @@
-# i will do it later
+stages:
+  # Stage 1: Ingestion
+  ingest:
+    cmd: python src/data_ingestion.py
+    deps:
+      - src/data_ingestion.py
+      - data/WA_Fn-UseC_-Telco-Customer-Churn.csv
+    outs:
+      - data/raw/churn.csv
+
+  # Stage 2: Data Transform (Renamed for clarity)
+  transform:
+    cmd: python src/data_transform.py
+    deps:
+      - src/data_transform.py
+      - data/raw/churn.csv  # Now links to Ingest output!
+    outs:
+      - data/processed/processed_churn.csv
+
+  # Stage 3: Model Train + Evaluation
+  evaluate:
+    cmd: python src/model_train.py
+    deps:
+      - src/model_train.py
+      - data/processed/processed_churn.csv # Now links to Transform output!
+    outs:
+      - outputs/model.pkl
