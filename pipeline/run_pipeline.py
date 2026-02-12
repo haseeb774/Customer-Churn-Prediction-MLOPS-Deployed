@@ -8,6 +8,7 @@ from src.data_ingest import DataIngest
 from src.data_transform import Datatransform
 from src.model_train import TrainModel
 
+
 def run_pipeline():
     # 1. Ingest
     path = r"D:\ML projects\churn\data\WA_Fn-UseC_-Telco-Customer-Churn.csv"

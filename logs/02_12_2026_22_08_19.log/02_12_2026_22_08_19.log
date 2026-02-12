@@ -1,0 +1,5 @@
+[ 2026-02-12 22:08:23,613 ] 13 root - INFO - file is load and returned from data_ingest
+[ 2026-02-12 22:08:23,691 ] 59 root - INFO - data_transformation succeesfuly completw
+[ 2026-02-12 22:08:23,691 ] 24 root - INFO - model_training started
+[ 2026-02-12 22:08:57,551 ] 125 root - INFO - Model successfully saved to outputs\model.pkl
+[ 2026-02-12 22:08:57,561 ] 128 root - INFO - model_training + mlflow complete

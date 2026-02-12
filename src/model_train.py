@@ -120,11 +120,12 @@ class TrainModel:
 
                 output_dir = "outputs"
                 model_file_path = os.path.join(output_dir, "model.pkl")
+                os.makedirs(output_dir, exist_ok=True)
                 joblib.dump(xgb, model_file_path)
                 logging.info(f"Model successfully saved to {model_file_path}")
 
                 print(classification_report(y_test, y_pred, digits=3))
-            logging.info("model_training + mlflow complete")    
+                logging.info("model_training + mlflow complete")    
         except Exception as e:
             logging.info("error occured in model_train")
             raise CustomException(e,sys)

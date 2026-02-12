@@ -1,6 +1,7 @@
 import pandas as pd
 import sys
 from src.logging import logging
+import os
 from src.exception import CustomException
 class Datatransform:
     def __init__(self, data):
@@ -46,11 +47,26 @@ class Datatransform:
             encoder = OneHotEncoder(sparse_output=False)
 
             encoded_data = encoder.fit_transform(df[["PaymentMethod"]])
+            encoded_df = pd.DataFrame(
+                encoded_data, 
+                columns=encoder.get_feature_names_out(["PaymentMethod"]), 
+                index=df.index
+            )
+
             df = df.drop(columns=["PaymentMethod"])
-            df = pd.concat([df, pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(["PaymentMethod"]))], axis=1)
+            df = pd.concat([df, encoded_df], axis=1)
             df = df.dropna()
             logging.info("data_transformation succeesfuly completw")
-            df.to_csv("data/processed/processed_churn.csv")
+
+            file_path = "data/processed/processed_churn.csv"
+
+            if os.path.exists(file_path):
+                pass  # File exists, do nothing
+            else:
+                # Ensure the directory "data/raw" exists before saving
+                os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                df.to_csv(file_path, index=False)
+
             return df
             
 
