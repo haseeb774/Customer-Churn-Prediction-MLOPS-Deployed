@@ -7,10 +7,10 @@ import os
 
 app = FastAPI()
 
-# Load your trained model
+# Load trained model
 model = joblib.load("outputs/model.pkl")
 
-# Path to your analysis images
+# Path to analysis images
 ANALYSIS_PATH = "outputs/analysis"
 
 class RawCustomerData(BaseModel):
