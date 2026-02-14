@@ -16,4 +16,4 @@ COPY . .
 # Remove the HEALTHCHECK from here so it doesn't break MLflow/Streamlit
 EXPOSE 8000 8501 5000
 
-CMD ["python"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
